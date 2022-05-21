@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 声明这个网页使用UTF-8编码规则 -->
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王者荣耀官网</title>
+    <style>
+        /* 边距清零 */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 设置背景 */
+        body {
+            padding-top: 42px;
+            background: #fff;
+            font: 14px/1.5 "Microsoft YaHei", Tahoma, "simsun", sans-serif;
+        }
+
+        /* 主菜单 */
+        .Menu {
+            position: absolute;
+            top: 40px;
+            width: 1920px;
+            height: 80px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid #000;
+        }
+
+        /* 下拉子菜单 */
+        .SubMenu {
+            position: absolute;
+            top: 80px;
+            width: 1920px;
+            height: 280px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* 导航盒子 */
+        .Nav_Box {
+            position: absolute;
+            top: 0px;
+            left: 315px;
+            width: 1290px;
+            height: 80px;
+        }
+
+        /* 背景 */
+        .backdrop {
+            position: absolute;
+            top: 40px;
+
+        }
+
+        /* 放大镜 */
+        .Nav_Box img {
+            position: absolute;
+            top: 7px;
+        }
+
+        /* 所有的色块 */
+        .Nav_Box li {
+
+            list-style: none;
+            width: 110px;
+            height: 77px;
+            float: left;
+            margin: 0px 0px;
+
+
+        }
+
+        /* 英文色块 */
+        .Nav_Box li p {
+            color: #858792;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 1px;
+            text-decoration: none
+        }
+
+        /* 中文色块 */
+        .Nav_Box li a {
+            color: #c9c9dd;
+            font-size: 18px;
+            text-align: center;
+            margin-left: 20px;
+            position: relative;
+            top: 15px;
+            text-decoration: none
+        }
+
+        /* 整个nav条 */
+        .ul_box {
+            position: absolute;
+            left: 250px;
+        }
+
+        /* nav的尾部 */
+        .ul_box_end {
+            position: absolute;
+            right: -220px;
+        }
+
+        /* 登录小机器人头像 */
+        #logon_img {
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 90px;
+            top: 15px;
+        }
+
+        /* 登陆的文字 */
+        #logon_P {
+            position: absolute;
+            right: -12px;
+        }
+
+        /* 当鼠标悬浮在nav色块上时，执行的css效果 */
+        .styles {
+            background-image: linear-gradient(#323235, #a68137);
+            border-bottom: 5px solid #eec254;
+        }
+
+        /* 最顶部的白条 */
+        .Header_Up {
+            width: 1920px;
+            height: 40px;
+            position: relative;
+            top: -40px;
+        }
+
+        .logo_cn {
+            z-index: 9;
+        }
+
+        /* 最顶部的白条的ul */
+        .Header_Up ul {
+            width: 990px;
+            height: 40px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        /* 最顶部的白条中的所有模块元素 */
+        .Header_Up ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        /* banner的子元素弹出的图片 */
+        .Banner_Sub a img {
+            position: relative;
+            top: -1914px;
+            left: 480px;
+            z-index: 6;
+            display: none;
+        }
+
+        /* 成长守护平台 */
+        .Wachstumswachter {
+            position: relative;
+            top: -14px;
+            left: 400px;
+            text-decoration: none;
+        }
+
+        /* 成长守护中后面文字的样式 */
+        .Wache {
+            position: relative;
+            top: -3px;
+            left: 0px;
+            text-decoration: none;
+            color: rgb(31, 9, 9);
+
+        }
+
+        .Wache:hover {
+            color: #ff4e00;
+        }
+
+        /* 腾讯游戏排行榜 */
+        .Rangliste {
+            width: 115px;
+            height: 40px;
+            position: relative;
+            top: -5px;
+            left: 428px;
+        }
+
+        /* 腾讯游戏排行榜中的文字 */
+        .Rangliste p {
+            position: relative;
+            top: 9px;
+            left: 0px;
+        }
+
+        /* 腾讯游戏排行榜中的图片 */
+        .Rangliste img {
+            position: relative;
+            top: -9px;
+            left: 100px;
+        }
+
+        /* 腾讯游戏排行榜的子页 */
+        .Rangliste_Sub {
+            position: relative;
+            top: -1924px;
+            left: 800px;
+            width: 707px;
+            height: 579px;
+            z-index: 6;
+            background-color: white;
+            display: none;
+
+
+        }
+
+
+        .New_product_ranking {
+            position: relative;
+            top: 10px;
+            left: 15px;
+        }
+
+        .New_product_ranking img {
+            width: 224px;
+            height: 40px;
+        }
+
+        /* 不随页面滚动的小妲己 */
+        .r_nav {
+            z-index: 9999999999999999999999999999999999999999999999;
+            position: fixed;
+            top: 200px;
+            right: 0px;
+            width: 254px;
+            height: 494px;
+            background-image: url(https://s1.328888.xyz/2022/05/20/Dom4P.png);
+        }
+
+        .r_nav img {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 165px;
+            height: 145px;
+
+        }
+
+        .r_nav ul {
+            z-index: 9999999999999999999999999999999999999999999999;
+            position: relative;
+            left: 30px;
+            top: 18px;
+
+        }
+
+        .r_nav ul li {
+            z-index: 9999999999999999999999999999999999999999999999;
+            display: inline-block;
+        }
+
+        .reward {
+            z-index: 9999999999999999999999999999999999999999999999;
+            position: relative;
+            top: -115px;
+            right: -13px;
+        }
+
+        /* 二维码 */
+        .QR_code {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 117px;
+            height: 110px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_all.png);
+            background-position: 0px 557px;
+            position: relative;
+            left: 60px;
+            top: -47px;
+        }
+
+        .QR_code img {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 108px;
+            height: 100px;
+            position: relative;
+            left: 4px;
+            top: 3px;
+        }
+
+        /* 微博 */
+
+        .micro_blog {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 117px;
+            height: 38px;
+            position: relative;
+            top: -1px;
+            right: 60px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_all.png);
+            background-position: -123px 450px;
+        }
+
+        .micro_blog_Sub {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 115px;
+            height: 151px;
+            position: fixed;
+            top: 420px;
+            right: 164px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_all.png);
+            background-position: 0px 155px;
+            display: none;
+        }
+
+        .micro_blog_Sub img {
+            z-index: 9999999999999999999999999999999999999999999999;
+            position: relative;
+            top: 9px;
+            left: 7px;
+        }
+
+        .micro_blog_Sub p {
+            z-index: 9999999999999999999999999999999999999999999999;
+            margin: 2px 2px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .color_orange {
+            z-index: 9999999999999999999999999999999999999999999999;
+            color: orange;
+        }
+
+        /* ************************************************************************************************************* */
+        /* 微信  */
+        .WeChat {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 117px;
+            height: 38px;
+            position: relative;
+            top: -11px;
+            right: -61px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_all.png);
+            background-position: -123px 410px;
+        }
+
+        .WeChat_Sub {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 115px;
+            height: 151px;
+            position: fixed;
+            top: 467px;
+            right: 164px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_all.png);
+            background-position: 0px 155px;
+            display: none;
+        }
+
+        .WeChat_Sub img {
+            z-index: 9999999999999999999999999999999999999999999999;
+            position: relative;
+            top: 9px;
+            left: 7px;
+        }
+
+        .WeChat_Sub p {
+            z-index: 9999999999999999999999999999999999999999999999;
+            margin: 2px 2px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .color_orange {
+            color: orange;
+        }
+
+        /* 视频号  */
+        .Video_Number {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 117px;
+            height: 38px;
+            position: relative;
+            top: 27px;
+            right: 60px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_all.png);
+            background-position: -123px 570px;
+        }
+
+        .Video_Number_Sub {
+            z-index: 9999999999999999999999999999999999999999999999;
+            width: 115px;
+            height: 151px;
+            position: fixed;
+            top: 507px;
+            right: 164px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_all.png);
+            background-position: 0px 155px;
+            display: none;
+        }
+
+        .Video_Number_Sub img {
+            position: relative;
+            top: 9px;
+            left: 7px;
+        }
+
+        .Video_Number_Sub p {
+            z-index: 9999999999999999999999999999999999999999999999;
+            margin: 2px 2px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .color_orange {
+            z-index: 9999999999999999999999999999999999999999999999;
+            color: orange;
+        }
+
+        /* 下拉菜单的内容 */
+        .sub_nav_inner {
+            width: 940px;
+            height: 285px;
+            margin: -31px auto;
+
+        }
+
+        .sub_nav_inner li {
+            width: 130px;
+            height: auto;
+            display: inline-block;
+            /* 这个参数用来顶对其 */
+            vertical-align: top;
+            position: relative;
+            left: 0px;
+
+        }
+
+        .sub_nav_inner li a {
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            padding: 0;
+            font-size: 14px;
+            text-decoration: none;
+            color: #c9c9dd;
+
+        }
+
+        .sub_nav_inner li a:hover {
+            color: #f3c258;
+            ;
+        }
+
+        /* 爆料站图片 */
+        #News_station {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -160px 536px;
+            position: relative;
+            top: 90px;
+            left: 465px;
+        }
+
+        /* 世界观体验站 */
+        #world_outlook_station {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -135px 536px;
+            position: relative;
+            top: 119px;
+            left: 435px;
+        }
+
+        /* 内容共创平台 */
+        #Content_co_creation_station {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -135px 536px;
+            position: relative;
+            top: 119px;
+            left: 539px;
+        }
+
+        /* KPL */
+        #KPL {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -160px 536px;
+            position: relative;
+            top: -2px;
+            left: 643px;
+        }
+
+        /* 挑战杯赛 */
+        #Challenge_Cup {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -160px 536px;
+            position: relative;
+            top: 29px;
+            left: 612px;
+        }
+
+        /* 全国大赛 */
+        #National_competition {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -160px 536px;
+            position: relative;
+            top: 59px;
+            left: 582px;
+        }
+
+        /* IP */
+        #IP {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -135px 536px;
+            position: relative;
+            top: 118px;
+            left: 686px;
+        }
+
+        /* 龙翼王者卡 */
+        #LongYI {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -135px 536px;
+            position: relative;
+            top: 180px;
+            left: 657px;
+        }
+
+        /* 创意互动营 */
+        #Creative_interaction {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -160px 536px;
+            position: relative;
+            top: 0px;
+            left: 760px;
+        }
+
+        /* 王者营地 */
+        #King_glory_camp {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -160px 536px;
+            position: relative;
+            top: 28px;
+            left: 730px;
+        }
+
+        /* 成长守护平台 */
+        #Growth_Guardian {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -134px 599px;
+            position: relative;
+            top: 28px;
+            left: 832px;
+        }
+
+        /* 王者荣耀世界 */
+        #king_world {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -135px 536px;
+            position: relative;
+            top: 0px;
+            left: 937px;
+        }
+
+        /* 代号破晓 */
+        #Code_Breaking_Dawn {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -135px 536px;
+            position: relative;
+            top: 28px;
+            left: 908px;
+        }
+
+        /* 代号启程 */
+        #Code_Departure {
+            width: 26px;
+            height: 24px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            display: inline-block;
+            background-position: -135px 536px;
+            position: relative;
+            top: 58px;
+            left: 878px;
+        }
+
+        /* 主页的内容 */
+
+        /* 新闻资讯 */
+        .News {
+            width: 1200px;
+            height: 342px;
+        }
+
+        .Content {
+            width: 1200px;
+            height: 1872px;
+            z-index: 6;
+            position: relative;
+            top: 540px;
+            left: 351.5px;
+
+        }
+
+        .Content_Rotation_map {
+            width: 605px;
+            height: 342px;
+        }
+
+        .Content_Rotation_map_img {
+            width: 604px;
+            height: 298px;
+            overflow: hidden;
+        }
+
+        .Content_Rotation_map_txt {
+            width: 604px;
+            height: 44px;
+            background-color: #000;
+        }
+
+        .Content_Rotation_map_img_img {
+            height: 298px;
+            width: 3037px;
+            /* 控制过度时间 */
+            transition: all 1.5s;
+            /* X/Y轴 */
+            transform: translate(0, 0);
+        }
+
+        /* 文字 */
+        .Content_Rotation_map_txt ul {
+            width: 604px;
+            height: 44px;
+            list-style: none;
+
+        }
+
+        .Content_Rotation_map_txt ul li {
+            display: block;
+            float: left;
+            width: 120.8px;
+            height: 44px;
+            line-height: 44px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+            text-align: center;
+            color: #b1b2be;
+        }
+
+        .Content_Rotation_map_txt_border {
+            background: rgba(255, 255, 255, 0.15);
+            color: #f3c258;
+        }
+
+        /* 新闻卡片 */
+        .News_card {
+            width: 359px;
+            height: 342px;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: relative;
+            top: -342px;
+            right: -604px;
+            color: #323235;
+        }
+
+        /* 新闻选项卡文字 */
+        .News_tab_text {
+            width: 325px;
+            height: 49px;
+            margin: 0px 17px;
+            border-bottom: 1px solid black;
+        }
+
+        .download_environment_experience {
+            width: 236px;
+            height: 342px;
+            position: relative;
+            top: -684px;
+            right: -963px;
+            background-color: skyblue;
+
+        }
+
+        .download {
+            width: 236px;
+            height: 128px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            background-position: 0px 381px;
+        }
+
+        .environment {
+            width: 236px;
+            height: 106px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            background-position: 0px 249px;
+        }
+
+        .experience {
+            width: 236px;
+            height: 108px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png);
+            background-position: 0px 139px;
+        }
+
+        /* 新闻选项卡文字切换部分 */
+        .News_tab_text ul {
+            width: 325px;
+            height: 49px;
+            list-style: none;
+
+        }
+
+        .News_tab_text ul li {
+            display: block;
+            float: left;
+            width: 52px;
+            height: 48px;
+            line-height: 48px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+            text-align: center;
+            color: #b1b2be;
+        }
+
+        .News_tab_text_border {
+            border-bottom: 3px solid #f3c258;
+        }
+
+        /* 新闻卡片里面的可视窗口 */
+
+        .News_tab_window {
+            width: 325px;
+            height: 289px;
+            overflow: hidden;
+            float: left;
+
+            background-color: rgba(0, 0, 0, 0);
+            margin: 0px 17px;
+
+        }
+
+        .News_tab {
+            width: 2000px;
+            height: 289px;
+            transition: all 1s;
+            transform: translate(0, 0)
+        }
+
+        .News_tab_window li {
+            margin: 3px 0px;
+            list-style: none;
+        }
+
+        .News_tab_window div {
+            padding: 0px 1px;
+            float: left;
+        }
+
+        .Hot {
+            width: 294px;
+            height: 36px;
+            line-height: 36px;
+            padding: 0 15px;
+            margin-top: 18px;
+            text-align: left;
+            font-size: 19px;
+            color: #f3c258;
+            background-color: #414046;
+
+        }
+
+        .Hot span {
+            position: relative;
+            top: -10px;
+        }
+
+        /* 公告 */
+        .Notice {
+            width: 323px;
+            height: 33px;
+            color: #b8b9c5;
+            font-size: 14px;
+        }
+
+        /* 新闻 */
+        .News_span {
+            width: 35px;
+            height: 13px;
+            border: 1px solid #1e96ab;
+            color: #1e96ab;
+            text-align: center;
+            line-height: 13px;
+        }
+
+        .Notice_span {
+            width: 35px;
+            height: 13px;
+            border: 1px solid #f3c258;
+            color: #f3c258;
+            text-align: center;
+            line-height: 13px;
+        }
+
+        .Hot_span {
+            width: 35px;
+            height: 13px;
+            border: 1px solid #eb2610;
+            color: #eb2610;
+            text-align: center;
+            line-height: 13px;
+        }
+
+        /* 用来控制狄某有话说上下距离的占位符 */
+        #seize_a_seat1 {
+            width: 324px;
+            height: 11px;
+        }
+
+        #seize_a_seat2 {
+            width: 324px;
+            height: 9px;
+        }
+
+        .shiling img {
+            position: relative;
+            right: -237px;
+            top: -342px;
+        }
+
+        .shiling a img {
+            width: 53px;
+            height: 47px;
+            position: relative;
+            right: -180px;
+            top: -290px;
+        }
+
+        .Card_box {
+            width: 1215px;
+            height: 134px;
+            display: inline-block;
+            position: relative;
+            top: -310px;
+        }
+
+        .Card_box li {
+            margin: 0px 5px;
+            width: 291px;
+            height: 134px;
+            float: left;
+            border: deepskyblue solid 1px;
+            overflow: hidden;
+            /*隐藏多余溢出部分*/
+            background-color: #000;
+            list-style: none;
+
+        }
+
+        /* 鼠标悬浮图片放大效果实现 */
+
+
+        .Card_box li a img {
+            transition: all 0.6s;
+            /*所有的属性在0.6秒之内完成改变*/
+            cursor: pointer;
+            /*s鼠标移上去，变成一个小手的图标，这样比较美观*/
+        }
+
+        .Card_box li a img:hover {
+            transform: scale(1.1);
+            /*这个是根据图片比例放大到图片的1.6倍*/
+            /*transform: scale(0.6);同理，这个缩小0.6倍*/
+        }
+
+        /* 尾页 */
+        .footer {
+            width: 1903px;
+            height: 362px;
+            position: relative;
+            bottom: -183px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201605/top_banner/bg_footer.jpg);
+        }
+
+        .footer_logo_widht {
+            width: 1200px;
+            height: 362px;
+            margin: 0 auto;
+        }
+
+        .footer_logo_widht div {
+            float: left;
+        }
+
+        .logobox {
+            width: 1200px;
+            height: 80px;
+            border-bottom: 3px solid #d4d4d4;
+        }
+
+        .tencentlogo {
+            width: 285px;
+            height: 64px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201605/main/spr.png);
+            background-position: 0px 365px;
+        }
+
+        .timilogo {
+            width: 70px;
+            height: 64px;
+            background-image: url(https://game.gtimg.cn/images/yxzj/web201605/main/spr.png);
+            background-position: -286px 365px;
+        }
+
+        /* 尾部底部左边盒子 */
+        .footer_left {
+            width: 508px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        .footer_left p {
+            margin-top: 20px;
+
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* 尾部底部右边盒子 */
+        .footer_right {
+            width: 587px;
+            height: 104px;
+            margin-left: 78px;
+        }
+
+
+        .footer_right ul a li,
+        .footer_right ul p,
+        .footer_right ul a,
+        .footer_right ul a {
+            margin-top: 10px;
+            /* margin-left: 20px; */
+            list-style: none;
+            float: left;
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<!-- 引入jquery -->
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<!-- jquery代码 -->
+<script>
+    //等待dom执行完毕最后执行
+    $(document).ready(function () {
+        // 鼠标悬浮，面板展开
+        $(".SubMenu").slideUp();//进入后自动关闭，（解决进入默认下拉状态）
+
+
+        // ************鼠标悬浮下拉面板模块*****************
+        // 当事件处于打开状态时，无法触发新的事件
+        $(".ul_box_start li").hover(function () {//当点击DIV
+            $(".SubMenu").slideDown("100");//鼠标点击色块，执行下拉
+        });
+
+        $(".Box").hover(function () {//当鼠标离开色块(Box)
+            $(".SubMenu").stop().slideUp("100");//鼠标离开色块，执行上拉
+        });
+
+
+
+
+
+        //定义：当鼠标悬浮于li上时，将背景设为黄色
+        $('.ul_box_start li').hover(function () {
+            $(this).toggleClass("styles");
+
+            //将li中的ZH文字颜色设置为黄色
+            $(".ul_box_start li").hover(function () {
+                $(this).children('a').css('color', '#eec254');
+            },
+                function () {
+                    $(this).children('a').css('color', '#c9c9dd');
+                }
+            );
+        });
+
+
+        // 将li中的EN文字颜色设置为黄色
+        $(".ul_box_start li").hover(function () {
+            $(this).children('a').children('p').css('color', '#eec254');
+        },
+            function () {
+                $(this).children('a').children('p').css('color', '#c9c9dd');
+            }
+        );
+
+        //顶部广告条
+        $(".banner,.Banner_Sub a img").hover(function () {
+            $('.Banner_Sub').children('a').children('img').css('display', 'block');
+
+        },
+            function () {
+                $('.Banner_Sub').children('a').children('img').css('display', 'none');
+
+            }
+        );
+
+
+        //腾讯游戏排行榜
+        $(".Rangliste,.Rangliste p,.Rangliste img,.Rangliste_Sub").mousedown(function () {//当点击DIV
+            $('.Rangliste img').attr("src", "https://s1.328888.xyz/2022/05/13/qJOud.png");
+            $('.Rangliste_Sub').css('display', 'block');
+        });
+
+        $(".Rangliste,.Rangliste p,.Rangliste img,.Rangliste_Sub").hover(function () {//当鼠标离开色块(Box)
+            $('.Rangliste img').attr("src", "https://s1.328888.xyz/2022/05/13/qJadQ.png");
+            $('.Rangliste_Sub').css('display', 'none');
+        });
+
+        $(".Rangliste,.Rangliste p,.Rangliste img,.Rangliste_Sub").hover(function () {
+            $('.Rangliste img').attr("src", "https://s1.328888.xyz/2022/05/13/qJOud.png");
+            $('.Rangliste_Sub').css('display', 'block');
+
+        },
+            function () {
+                $('.Rangliste img').attr("src", "https://s1.328888.xyz/2022/05/13/qJadQ.png");
+                $('.Rangliste_Sub').css('display', 'none');
+            }
+        );
+
+        //固定的小妲己下面的微博/微信/视频号鼠标悬浮效果
+        //微博
+        $('.micro_blog').hover(function () {
+            $('.micro_blog').css('background-position', '-123px 329px')
+            $('.micro_blog_Sub').css('display', 'block')
+        },
+            function () {
+                $('.micro_blog').css('background-position', '-123px 450px');
+                $('.micro_blog_Sub').css('display', 'none')
+            }
+        );
+        // 微信
+        $('.WeChat').hover(function () {
+            $('.WeChat').css('background-position', '-123px 370px')
+            $('.WeChat_Sub').css('display', 'block')
+        },
+            function () {
+                $('.WeChat').css('background-position', '-123px 410px');
+                $('.WeChat_Sub').css('display', 'none')
+            }
+        );
+
+        // 视频号
+        $('.Video_Number').hover(function () {
+            $('.Video_Number').css('background-position', '-123px 528px')
+            $('.Video_Number_Sub').css('display', 'block')
+        },
+            function () {
+                $('.Video_Number').css('background-position', '-123px 570px');
+                $('.Video_Number_Sub').css('display', 'none')
+            }
+        );
+
+
+        // 当鼠标悬浮在选项卡中，设置样式
+        $('.Content_Rotation_map_txt ul li').hover(function () {
+            $('.Content_Rotation_map_txt ul li').css('color', '#b1b2be')
+            $('.Content_Rotation_map_txt ul li').removeClass('Content_Rotation_map_txt_border')
+            $(this).css('color', '#f3c258')
+            $(this).addClass('Content_Rotation_map_txt_border')
+        });
+        //主页轮播图
+        $('#one').mouseover(function () {
+            $('.Content_Rotation_map_img_img').css('transform', 'translate(0px,0)')
+
+        })
+        $('#tow').mouseover(function () {
+            $('.Content_Rotation_map_img_img').css('transform', 'translate(-608px,0)')
+        })
+        $('#three').mouseover(function () {
+            $('.Content_Rotation_map_img_img').css('transform', 'translate(-1216px,0)')
+        })
+        $('#four').mouseover(function () {
+            $('.Content_Rotation_map_img_img').css('transform', 'translate(-1824px,0)')
+        })
+        $('#five').mouseover(function () {
+            $('.Content_Rotation_map_img_img').css('transform', 'translate(-2432px,0)')
+        })
+
+        // 当鼠标悬浮在选项卡中，设置样式
+        $('.News_tab_text ul div li').hover(function () {
+            $('.News_tab_text ul li').css('color', '#b1b2be')
+            $('.News_tab_text ul li').removeClass('News_tab_text_border')
+            $(this).css('color', '#f3c258')
+            $(this).addClass('News_tab_text_border')
+        });
+
+        //当鼠标悬浮在选项卡中，滑动卡片
+        $('#six').mouseover(function () {
+            $('.News_tab').css('transform', 'translate(0px,0)')
+
+        })
+        $('#seven').mouseover(function () {
+            $('.News_tab').css('transform', 'translate(-330px,0)')
+        })
+        $('#eight').mouseover(function () {
+            $('.News_tab').css('transform', 'translate(-660px,0)')
+        })
+        $('#nine').mouseover(function () {
+            $('.News_tab').css('transform', 'translate(-985px,0)')
+        })
+        $('#ten').mouseover(function () {
+            $('.News_tab').css('transform', 'translate(-1313px,0)')
+        })
+        $('.Notice span:last-child').css('float', 'right')
+
+    });
+</script>
+<!-- html标签 -->
+
+<body>
+    <!-- 背景 -->
+    <div class="backdrop">
+        <img src="./Glory of Kings_image/background.jpg" alt="">
+    </div>
+    <!-- 最顶部白条 -->
+    <div class="Header_Up">
+        <ul>
+            <!-- 腾讯游戏Logo -->
+            <li class="logo_cn"><a href="#"><img src="https://s1.328888.xyz/2022/05/20/diVcd.png" alt=""></a></li>
+            <!-- 广告 -->
+            <li class="banner"><a href="#"><img
+                        src="https://tiem-cdn.qq.com/o2/images/1458b971ae2d022b51da691289b7f2b6.jpg" alt=""><img
+                        alt=""></a></li>
+
+            <!-- 成长守护平台 -->
+            <li class="Wachstumswachter">
+                <a href="#"><img src="https://s1.328888.xyz/2022/05/20/diZSQ.png" alt=""></a>
+                <a class="Wache" href="#">成长守护平台</a>
+                </a>
+            </li>
+            <!-- 腾讯游戏排行榜 -->
+            <li class="Rangliste">
+                <p>腾讯游戏排行榜</p>
+                <img src="https://s1.328888.xyz/2022/05/13/qJadQ.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <!-- 整个nav包含nav和下拉菜单 -->
+    <div class="Box">
+        <div class="Menu">
+            <div class="Nav_Box">
+                <img src="https://s1.328888.xyz/2022/05/20/divi3.png" alt="">
+                <div class="ul_box">
+                    <ul class="ul_box_start">
+                        <li><a href="#">游戏资料<p>DATA</p></a></li>
+                        <li><a href="#">内容中心<p>CONTENTS</p></a></li>
+                        <li><a href="#">赛事中心<p>MATCH</p></a></li>
+                        <li><a href="#">百态王者<p>CULTURE</p></a></li>
+                        <li><a href="#">社区互动<p>COMMUNITY</p></a></li>
+                        <li><a href="#">玩家支持<p>RLAYER</p></a></li>
+                        <li><a href="#">IP新游<p>NEW GAMES</p></a></li>
+                    </ul>
+                    <ul class="ul_box_end">
+                        <li><a href="#"><img src="https://s1.328888.xyz/2022/05/20/diMVB.png" alt="">
+                            </a></li>
+                        <li> <img id="logon_img" src="https://s1.328888.xyz/2022/05/20/diSgT.png" alt=""><a
+                                href="#">欢迎登陆<p id="logon_P">登陆后查看战绩</p></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <!-- Menu子菜单的内容 -->
+            <div class="SubMenu">
+                <!-- *************************************************** -->
+                <!-- 爆料站前面的H -->
+                <div id="News_station"></div>
+                <!-- 世界观体验站前面的 -->
+                <div id="world_outlook_station"></div>
+                <!-- 内容共创平台 -->
+                <div id="Content_co_creation_station"></div>
+                <!-- KPL -->
+                <div id="KPL"></div>
+                <!-- 挑战杯赛 -->
+                <div id="Challenge_Cup"></div>
+                <!-- 全国大赛 -->
+                <div id="National_competition"></div>
+                <!-- IP共创计划 -->
+                <div id="IP"></div>
+                <!-- 龙翼王者卡 -->
+                <div id="LongYI"></div>
+                <!-- 创意互动营 -->
+                <div id="Creative_interaction"></div>
+                <!-- 王者营地 -->
+                <div id="King_glory_camp"></div>
+                <!-- 成长守护平台 -->
+                <div id="Growth_Guardian"></div>
+                <!-- 王者荣耀·世界 -->
+                <div id="king_world"></div>
+                <!-- 代号:破晓 -->
+                <div id="Code_Breaking_Dawn"></div>
+                <!-- 代号:启程 -->
+                <div id="Code_Departure"></div>
+                <!-- ****************************************************** -->
+                <ul class="sub_nav_inner">
+                    <li>
+                        <a href="#">版本介绍</a>
+                        <a href="#">游戏介绍</a>
+                        <a href="#">英雄资料</a>
+                        <a href="#">爆料站</a>
+                        <a href="#">世界观体验站</a>
+                        <a href="#">游戏壁纸</a>
+                    </li>
+                    <li><a href="#">攻略中心</a>
+                        <a href="#">英雄攻略</a>
+                        <a href="#">视频中心</a>
+                        <a href="#">开放素材库</a>
+                        <a href="#">内容共创平台</a>
+                    </li>
+                    <li><a href="#">KPL</a>
+                        <a href="#">挑战杯赛</a>
+                        <a href="#">全国大赛</a>
+                        <a href="#">女子公开赛</a>
+                        <a href="#">K甲联赛</a>
+                        <a href="#">高校联赛</a>
+                        <a href="#">全民赛</a>
+                        <a href="#">赛事数据</a>
+                    </li>
+                    <li><a href="#">荣耀-传承</a>
+                        <a href="#">王者文化站</a>
+                        <a href="#">万千世界</a>
+                        <a href="#">星光殿堂</a>
+                        <a href="#">IP共创计划</a>
+                        <a href="#">商户特权</a>
+                        <a href="#">龙翼王者卡</a>
+                    </li>
+                    <li><a href="#">创意互动营</a>
+                        <a href="#">王者营地</a>
+                        <a href="#">微信圈子</a>
+                        <a href="#">官方微博</a>
+                        <a href="#">微信公众号</a>
+                        <a href="#">手Q订阅号</a>
+                    </li>
+                    <li><a href="#">腾讯游戏防沉迷</a>
+                        <a href="#">成长守护平台</a>
+                        <a href="#">对局环境情报站</a>
+                        <a href="#">客服专区</a>
+                        <a href="#">礼包兑换</a>
+                        <a href="#">自助服务</a>
+                    </li>
+                    <li><a href="#">王者荣耀·世界</a>
+                        <a href="#">代号:破晓</a>
+                        <a href="#">代号:启程</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 主页 -->
+        <div class="Content">
+            <div class="News">
+                <!-- 轮播图 -->
+                <div class="Content_Rotation_map">
+                    <!-- 图片位置 -->
+                    <div class="Content_Rotation_map_img">
+                        <!-- 图片位置中的图片 -->
+                        <div class="Content_Rotation_map_img_img">
+                            <a href="#">
+                                <img src="https://s1.328888.xyz/2022/05/20/dio52.jpg" alt=""></a>
+
+                            <a href="#">
+                                <img src="  https://s1.328888.xyz/2022/05/20/diPQ7.jpg" alt=""></a>
+                            <a href="#">
+                                <img src=" https://s1.328888.xyz/2022/05/20/drQcZ.png" alt=""></a>
+                            <a href="#">
+                                <img src="https://s1.328888.xyz/2022/05/20/dixHX.jpg" alt=""></a>
+                            <a href="#">
+                                <img src="https://s1.328888.xyz/2022/05/20/drUSC.jpg" alt=""></a>
+                        </div>
+                    </div>
+
+
+
+                    <!-- 文字 -->
+                    <div class="Content_Rotation_map_txt">
+                        <ul>
+                            <li id="one" class="Content_Rotation_map_txt_border" style="color:#f3c258">源梦新皮肤</li>
+                            <li id="tow">女子赛开赛</li>
+                            <li id="three">520皮肤动画</li>
+                            <li id="four">北京大区赛</li>
+                            <li id="five">王者萌萌假日</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="News_card">
+                    <!-- 文字位置定位 -->
+                    <div class="News_tab_text">
+                        <ul>
+                            <div>
+                                <li id="six" class="News_tab_text_border" style="color:#f3c258">热门</li>
+                                <li id="seven">新闻</li>
+                                <li id="eight">公告</li>
+                                <li id="nine">活动</li>
+                                <li id="ten">赛事</li>
+                            </div>
+                            <li>···</li>
+                        </ul>
+                    </div>
+                    <!-- 新闻位置定位 -->
+                    <ul class="News_tab_window">
+                        <div class="News_tab">
+
+
+                            <!-- 热门 -->
+                            <div class="News_Hot">
+
+                                <div id="seize_a_seat1"></div>
+                                <li class="Hot"><span>狄某有话说 | 鬼谷子:姜子...</span></li>
+                                <div id="seize_a_seat2"></div>
+                                <li class="Notice">
+                                    <span class="Notice_span">公告</span>
+                                    <span>5月19日全服不停机更新公告</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/18</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>源歌源梦皮肤研发进展沟通【老亚...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/17</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>源歌源·梦新皮肤最新进展</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/16</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>新英雄首款皮肤调整【老亚瑟的答...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/13</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>狄某有话说|挂机还说队友不配赢？...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/13</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">活动</span>
+                                    <span>【霸王别姬-抽限定皮肤】活动开启...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/11</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>赵云-未来纪元2D设计稿优化进展...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/10</span>
+                                </li>
+                            </div>
+                            <div class="News_News">
+
+                                <div id="seize_a_seat1"></div>
+                                <li class="Hot"><span>狄某有话说 | 鬼谷子:姜子...</span></li>
+                                <div id="seize_a_seat2"></div>
+                                <li class="Notice">
+                                    <span class="News_span">新闻</span>
+                                    <span>520相约峡谷,共享浪漫好礼</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/18</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="News_span">新闻</span>
+                                    <span>天赐快手语音包活动</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/17</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="News_span">新闻</span>
+                                    <span>王者荣耀x气味图书馆520合作款香...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/16</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="News_span">新闻</span>
+                                    <span>元歌源梦皮肤研发进展沟通【老亚...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/13</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="News_span">新闻</span>
+                                    <span>元歌源·梦新皮肤最新进展</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/13</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="News_span">新闻</span>
+                                    <span>梦幻爱情即将开始！|DoX王者容...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/11</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="News_span">新闻</span>
+                                    <span>新英雄首款皮肤调整【老亚瑟的答...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/10</span>
+                                </li>
+                            </div>
+                            <div class="News_Notice">
+
+                                <div id="seize_a_seat1"></div>
+                                <li class="Hot"><span>5月19日全服不停机更新公告</span></li>
+                                <div id="seize_a_seat2"></div>
+                                <li class="Notice">
+                                    <span class="Notice_span">公告</span>
+                                    <span>5月19日外挂专项打击公告</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/19</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">公告</span>
+                                    <span>5月19日游戏内违规签名、攻略信...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/19</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">公告</span>
+                                    <span>5月19日挂车行为专项违规处罚公告</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/19</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">公告</span>
+                                    <span>5月19日全服不停机更新公告</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/19</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">公告</span>
+                                    <span>5月18日王者荣耀赛事频道维护说明...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/18</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">公告</span>
+                                    <span>5月17日体验服停机更新公告...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/17</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">公告</span>
+                                    <span>5月14日体验服停机更新公告...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/14</span>
+                                </li>
+                            </div>
+                            <div class="News_service">
+
+                                <div id="seize_a_seat1"></div>
+                                <li class="Hot"><span>狄某有话说 | 鬼谷子:姜子...</span></li>
+                                <div id="seize_a_seat2"></div>
+                                <li class="Notice">
+                                    <span class="Notice_span">公告</span>
+                                    <span>5月19日全服不停机更新公告</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/18</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>源歌源梦皮肤研发进展沟通【老亚...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/17</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>源歌源·梦新皮肤最新进展</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/16</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>新英雄首款皮肤调整【老亚瑟的答...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/13</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>狄某有话说|挂机还说队友不配赢？...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/13</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">活动</span>
+                                    <span>【霸王别姬-抽限定皮肤】活动开启...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/11</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>赵云-未来纪元2D设计稿优化进展...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/10</span>
+                                </li>
+                            </div>
+                            <div class="News_game">
+
+                                <div id="seize_a_seat1"></div>
+                                <li class="Hot"><span>狄某有话说 | 鬼谷子:姜子...</span></li>
+                                <div id="seize_a_seat2"></div>
+                                <li class="Notice">
+                                    <span class="Notice_span">公告</span>
+                                    <span>5月19日全服不停机更新公告</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/18</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>源歌源梦皮肤研发进展沟通【老亚...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/17</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>源歌源·梦新皮肤最新进展</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/16</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>新英雄首款皮肤调整【老亚瑟的答...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/13</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>狄某有话说|挂机还说队友不配赢？...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/13</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">活动</span>
+                                    <span>【霸王别姬-抽限定皮肤】活动开启...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/11</span>
+                                </li>
+                                <li class="Notice">
+                                    <span class="Hot_span">热门</span>
+                                    <span>赵云-未来纪元2D设计稿优化进展...</span>
+                                    <span style="font-size: 2px;line-height: 24px;">05/10</span>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="download_environment_experience">
+                    <a href="#">
+                        <div class="download"></div>
+                    </a>
+                    <a href="#">
+                        <div class="environment"></div>
+                    </a>
+                    <a href="#">
+                        <div class="experience"></div>
+                    </a>
+                    <div class="shiling">
+                        <img src="https://s1.328888.xyz/2022/05/20/dr99e.png" alt="">
+                        <a href="#">
+                            <img src="https://s1.328888.xyz/2022/05/20/drGZt.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 放大卡片 -->
+            <ul class="Card_box">
+                <li><a href="#"><img src="https://s1.328888.xyz/2022/05/20/drfQP.jpg" alt=""></a></li>
+                <li><a href="#"><img src="https://s1.328888.xyz/2022/05/20/driHm.png" alt=""></a></li>
+                <li><a href="#"><img src="https://img1.imgtp.com/2022/05/20/clKbumSJ.jpg" alt=""></a></li>
+                <li><a href="#"><img src="https://s1.328888.xyz/2022/05/20/drrmA.png" alt=""></a></li>
+            </ul>
+
+        </div>
+        <!-- ************************************[弹出广告条(因为冲突，所以将其放到此处)]*************************************************** -->
+        <div class="Banner_Sub"><a href="#"><img src="https://imgtu.com/i/OXdy7t" alt=""></a></div>
+        <div class="Rangliste_Sub"><img src="https://imgtu.com/i/OXd2h8" alt=""></div>
+        <!-- 微博 -->
+        <div class="micro_blog_Sub"> <img
+                src="https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/weibo.jpg" alt="">
+            <p> &nbsp&nbsp扫码<span class="color_orange">关注官方微博</span><br>获取<span class="color_orange">一手爆料及福利</span>
+            </p>
+        </div>
+        <!-- 微信 -->
+        <div class="WeChat_Sub"> <img
+                src="https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/gzh_code.jpg" alt="">
+            <p> 扫码<span class="color_orange">关注官方公众号</span><br>获取<span class="color_orange">最新资讯及好礼</span></p>
+        </div>
+        <!-- 视频号 -->
+        <div class="Video_Number_Sub"> <img
+                src="https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/shipinhao_code.jpg" alt="">
+            <p> 扫码<span class="color_orange">关注官方视频号</span><br>获取<span class="color_orange">精彩视频及福利</span></p>
+        </div>
+
+    </div>
+
+
+    <!-- 不随页面滚动的小妲己 -->
+    <div class="r_nav">
+        <ul><img src="https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_dj.png" alt="小妲己被外星人抓走了...">
+            <p class="reward">下载王者营地<br>每天领福利~</p>
+            <li class="QR_code"><img
+                    src="https://game.gtimg.cn/images/yxzj/web201706/images/comm/floatwindow/r_code.jpg" alt="">
+            </li>
+
+            <li class="micro_blog"></li>
+            <li class="WeChat"></li>
+            <li class="Video_Number"></li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+        <div class="footer_logo">
+            <div class="footer_logo_widht">
+                <div class="logobox">
+                    <div class="tencentlogo"></div>
+                    <div class="timilogo"></div>
+                </div>
+                <div class="footer_text">
+                    <div class="footer_left">
+                        <p>
+                            <em>抵制不良游戏</em>
+                            <em>拒绝盗版游戏</em>
+                            <em>注意自我保护</em>
+                            <em>谨防受骗上当</em>
+                            <em>适度游戏益脑</em>
+                            <em>沉迷游戏伤身</em>
+                            <em>合理安排时间</em>
+                            <em>享受健康生活</em>
+                        </p>
+                        <p>《王者荣耀》全部背景故事发生于架空世界“王者大陆”中。
+                            相关人物、地理、事件均为艺术创作，并非正史。
+                            若因观看王者故事对相关历史人物产生兴趣，建议查阅正史记载。</p>
+                    </div>
+                    <div class="footer_right">
+                        <ul>
+                            <a href="#">
+                                <li>腾讯互动娱乐|</li>
+                            </a>
+                            <a href="#">
+                                <li>服务条款|</li>
+                            </a>
+                            <a href="#">
+                                <li>隐私保护指引|</li>
+                            </a>
+                            <a href="#">
+                                <li>儿童隐私保护|</li>
+                            </a>
+                            <a href="#">
+                                <li>腾讯游戏招聘|</li>
+                            </a>
+                            <a href="#">
+                                <li>腾讯游戏客服|</li>
+                            </a>
+                            <a href="#">
+                                <li>游戏列表|</li>
+                            </a>
+                            <a href="#">
+                                <li>广告服务及商务合作</li>
+                            </a>
+                            <p>COPYRIGHT © 1998 - 2022 TENCENT. ALL RIGHTS RESERVED.</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            <a href="#">腾讯公司版权所有</a>
+                            <a href="#">网络游戏行业防沉迷自律公约</a>
+                            <a href="#">工商网监电子标识 |粤网文[2020]3396-195号|(署)网出证(粤)字第054号</a>
+                            <a href="#">文网游备字[2016]M-CSG 0059 号|新广出审[2017] 6712号|ISBN 978-7-7979-8408-9</a>
+                            <p>全国文化市场统一举报电话: 12318</p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+</html>
